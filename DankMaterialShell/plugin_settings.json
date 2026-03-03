@@ -1,0 +1,19 @@
+{
+  "calculator": {
+    "enabled": true,
+    "trigger": "",
+    "calcEngine": "qalc",
+    "noTrigger": true,
+    "persistHistoryOnFile": true
+  },
+  "homeAssistantMonitor": {
+    "enabled": false
+  },
+  "developerUtilities": {
+    "enabled": true
+  },
+  "dankGifSearch": {
+    "enabled": false,
+    "preferredFormat": "gif"
+  }
+}
