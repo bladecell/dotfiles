@@ -1,0 +1,25 @@
+# Browsers
+vivaldi/
+mozilla/
+zen/
+BeeperTexts/
+
+# System/runtime
+dconf/
+pulse/
+cosmic/
+
+# Editors (heavy data)
+Code - OSS/
+VSCodium/
+
+# Misc
+go/
+nautilus/
+qalculate/
+dotfiles/
+
+# Niri
+niri/cfg
+niri/*.backup*
+niri/dms/outputs.kdl

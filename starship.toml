@@ -1,0 +1,131 @@
+#  ┳┳┓┏┓┏┳┓┳┳┏┓┏┓┳┓
+#  ┃┃┃┣┫ ┃ ┃┃┃┓┣ ┃┃
+#  ┛ ┗┛┗ ┻ ┗┛┗┛┗┛┛┗
+#     
+# Matugen color palette for Starship
+"$schema" = 'https://starship.rs/config-schema.json'
+palette = "matugen"
+
+format = """
+[╭](outline)\
+[](fg:primary)\
+$os\
+[](fg:primary bg:surface_container)\
+$directory\
+$time\
+[](fg:surface_container)\
+$cmd_duration\
+$line_break\
+[╰](outline)\
+$character
+"""
+
+
+
+[os]
+disabled = false
+style = "bg:primary fg:primary_text"
+
+[os.symbols]
+Windows = "  "
+Ubuntu = " 󰕈 "
+SUSE = "  "
+Raspbian = " 󰐿 "
+Mint = " 󰣭 "
+Macos = " 󰀵 "
+Manjaro = "  "
+Linux = " 󰌽 "
+Gentoo = " 󰣨 "
+Fedora = " 󰣛 "
+Alpine = "  "
+Amazon = "  "
+Android = "  "
+Arch = " 󰣇 "
+CachyOS = " 󰣇 "
+CentOS = "  "
+Debian = " 󰣚 "
+Redhat = " 󱄛 "
+RedHatEnterprise = " 󱄛 "
+
+[directory]
+disabled = false
+style = "fg:surface_text bg:surface_container"
+home_symbol = ""
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"/Documents" = "/󰈙 "
+"/Downloads" = "/ "
+"/Music" = "/ "
+"/Pictures" = "/ "
+"/Videos" = "/ "
+"/Audios" = "/ "
+"/GitHub" = "/ "
+"/.config" = "/ "
+"/dev" = "/󰲋 "
+# Keep in mind that the order matters. For example:
+# "/Important Documents" = "/󰈙 "
+# will not be replaced, because "/Documents" was already substituted before.
+# So either put "/Important Documents" before "/Documents" or use the substituted version:
+# "/Important 󰈙 " = "/󰈙 "
+
+[time]
+disabled = false
+time_format = "%T"
+style = "fg:surface_text bg:surface_container"
+format = '[  $time ]($style)'
+
+[cmd_duration]
+disabled = false
+show_milliseconds = true
+show_notifications = true
+min_time = 100
+min_time_to_notify = 45000
+format = "[  in $duration ]($style)"
+style = "fg:info"
+
+[character]
+format = """
+[───$symbol](fg:outline) """
+success_symbol = '[](fg:secondary)'
+error_symbol = '[](fg:error)'
+
+[palettes.matugen]
+
+
+primary = "#eba0ac"
+primary_text = "#1e1e2e"
+primary_container = "#6d3641"
+
+secondary = "#f38ba8"
+
+surface = "#181825"
+surface_text = "#cdd6f4"
+surface_variant = "#1e1e2e"
+surface_variant_text = "#a6adc8"
+surface_tint = "#eba0ac"
+
+background = "#1e1e2e"
+background_text = "#cdd6f4"
+
+outline = "#6c7086"
+
+surface_container = "#1e1e2e"
+surface_container_high = "#313244"
+
+error = "#f38ba8"
+warning = "#ffe272"
+info = "#6d3641"
+
+
+lavender = '147'
+red = '161'
+yellow = '222'
+green = '77'
+white = '231'
+gray = '242'
+black = '16'
