@@ -23,3 +23,9 @@ dotfiles/
 niri/cfg
 niri/*.backup*
 niri/dms/outputs.kdl
+
+# DMS
+DankMaterialShell/plugins/.repos/
+DankMaterialShell/plugins/dankGifSearch
+DankMaterialShell/plugins/calculator/test_*.js
+DankMaterialShell/plugins/calculator/agent_specs/
