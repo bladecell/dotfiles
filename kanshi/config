@@ -1,0 +1,15 @@
+profile {
+    output "eDP-1" disable
+    output "DP-3" enable mode 2560x1440@143.998Hz position 1920,0
+    output "DP-6" enable mode 2560x1440@59.951Hz position 4480,0
+}
+
+profile {
+    output "eDP-1" enable
+}
+
+profile {
+    output "eDP-1" disable
+    output "DP-4" enable mode 2560x1440@143.998Hz position 1920,0
+    output "DP-8" enable mode 2560x1440@59.951Hz position 4480,0
+}
