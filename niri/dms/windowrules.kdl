@@ -13,21 +13,27 @@ window-rule {
     default-column-width { proportion 0.9; }
 }
 
-// @id=wr_1771701437830637908 @name=vivaldi-stable
-window-rule {
-    match app-id="^vivaldi-stable$" title="Vivaldi$"
-    default-column-width { proportion 0.95; }
-}
-
-// @id=wr_1771701484557484324 @name=BeeperTexts
-window-rule {
-    match app-id="^BeeperTexts$"
-    open-on-output "DP-2"
-    default-column-width { proportion 0.7; }
-}
-
 // @id=wr_1771701592020901457 @name=codium
 window-rule {
     match app-id="^codium$"
     default-column-width { proportion 0.9; }
+}
+
+// @id=wr_1772706882359084973 @name=zen
+window-rule {
+    match app-id="^zen$"
+    default-column-width { proportion 0.9; }
+}
+
+// @id=wr_1772706912072978823 @name=ONLYOFFICE
+window-rule {
+    match app-id="^ONLYOFFICE$"
+    default-column-width { proportion 0.7; }
+}
+
+// @id=wr_1772792144858062175 @name=winboat-BlackFin DB Loader
+window-rule {
+    match app-id="^winboat-BlackFin DB Loader$"
+    min-width 300
+    min-height 150
 }

@@ -1,12 +1,12 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/kuba/.config/DankMaterialShell/themes/catppuccin/theme.json",
+  "customThemeFile": "/home/jpojsl/.config/DankMaterialShell/themes/catppuccin/theme.json",
   "registryThemeVariants": {
     "catppuccin": {
       "dark": {
         "flavor": "mocha",
-        "accent": "maroon"
+        "accent": "teal"
       }
     }
   },
@@ -123,7 +123,7 @@
     }
   ],
   "showWorkspaceIndex": false,
-  "showWorkspaceName": false,
+  "showWorkspaceName": true,
   "showWorkspacePadding": false,
   "workspaceScrolling": false,
   "showWorkspaceApps": false,
@@ -240,12 +240,12 @@
   "acMonitorTimeout": 600,
   "acLockTimeout": 1800,
   "acSuspendTimeout": 0,
-  "acSuspendBehavior": 0,
+  "acSuspendBehavior": 2,
   "acProfileName": "",
   "batteryMonitorTimeout": 0,
   "batteryLockTimeout": 0,
   "batterySuspendTimeout": 0,
-  "batterySuspendBehavior": 0,
+  "batterySuspendBehavior": 2,
   "batteryProfileName": "",
   "batteryChargeLimit": 100,
   "lockBeforeSuspend": true,

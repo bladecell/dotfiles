@@ -97,17 +97,17 @@ error_symbol = '[](fg:error)'
 [palettes.matugen]
 
 
-primary = "#eba0ac"
+primary = "#94e2d5"
 primary_text = "#1e1e2e"
-primary_container = "#6d3641"
+primary_container = "#2e5e59"
 
-secondary = "#f38ba8"
+secondary = "#89dceb"
 
 surface = "#181825"
 surface_text = "#cdd6f4"
 surface_variant = "#1e1e2e"
 surface_variant_text = "#a6adc8"
-surface_tint = "#eba0ac"
+surface_tint = "#94e2d5"
 
 background = "#1e1e2e"
 background_text = "#cdd6f4"
@@ -118,8 +118,8 @@ surface_container = "#1e1e2e"
 surface_container_high = "#313244"
 
 error = "#f38ba8"
-warning = "#ffe272"
-info = "#6d3641"
+warning = "#fff372"
+info = "#2e5e59"
 
 
 lavender = '147'

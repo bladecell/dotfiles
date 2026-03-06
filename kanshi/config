@@ -1,15 +1,9 @@
-profile {
+profile docked {
     output "eDP-1" disable
-    output "DP-3" enable mode 2560x1440@143.998Hz position 1920,0
-    output "DP-6" enable mode 2560x1440@59.951Hz position 4480,0
+    output "Dell Inc. DELL U2515H 9X2VY68F06TL" enable mode 2560x1440@59.951Hz position 2560,0
+    output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d" enable mode 2560x1440@143.998Hz position 0,0
 }
 
-profile {
+profile laptop-only {
     output "eDP-1" enable
-}
-
-profile {
-    output "eDP-1" disable
-    output "DP-4" enable mode 2560x1440@143.998Hz position 1920,0
-    output "DP-8" enable mode 2560x1440@59.951Hz position 4480,0
 }

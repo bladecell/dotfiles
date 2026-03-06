@@ -6,11 +6,11 @@ config-notification {
     disable-failed
 }
 
-gestures {
-    hot-corners {
-        off
-    }
-}
+// gestures {
+//     hot-corners {
+//         off
+//     }
+// }
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -31,6 +31,10 @@ input {
       accel-profile "flat"
       scroll-method "on-button-down"
     }
+    touchpad {
+            tap // Enable tap-to-click
+            natural-scroll // Enable natural (macOS-style) scrolling
+        }
     focus-follows-mouse max-scroll-amount="90%"  // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
@@ -138,7 +142,7 @@ hotkey-overlay {
     skip-at-startup
 }
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 animations {
     workspace-switch {
         spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
@@ -171,65 +175,6 @@ animations {
         spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
     }
 }
-// Window rules let you adjust behavior for individual windows.
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-window-rule {
-    match app-id=r#"^org\.gnome\."#
-    draw-border-with-background false
-    geometry-corner-radius 12
-    clip-to-geometry true
-}
-window-rule {
-    match app-id=r#"^gnome-control-center$"#
-    match app-id=r#"^pavucontrol$"#
-    match app-id=r#"^nm-connection-editor$"#
-    default-column-width { proportion 0.5; }
-    open-floating false
-}
-window-rule {
-    match app-id=r#"^gnome-calculator$"#
-    match app-id=r#"^galculator$"#
-    match app-id=r#"^blueman-manager$"#
-//    match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^steam$"#
-    match app-id=r#"^xdg-desktop-portal$"#
-    open-floating true
-}
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    match app-id="Alacritty"
-    match app-id="zen"
-    match app-id="com.mitchellh.ghostty"
-    match app-id="kitty"
-    draw-border-with-background false
-}
-
-
-window-rule {
-    match app-id=r#"vivaldi-stable$"# title="^Picture-in-Picture$"
-    match app-id="zoom"
-    open-floating true
-}
-
-// Open dms windows as floating by default
-window-rule {
-    match app-id=r#"org.quickshell$"#
-    open-floating true
-}
-window-rule {
-    match app-id="vivaldi-stable"
-    default-column-width { proportion 1.0;}
-}
 
 debug {
     honor-xdg-activation-with-invalid-serial
@@ -245,6 +190,9 @@ recent-windows {
     }
 }
 
+include "config/workspaces.kdl"
+include "config/windowrules.kdl"
+include "config/autostart.kdl"
 // Include dms files
 include "dms/colors.kdl"
 include "dms/layout.kdl"
@@ -254,3 +202,4 @@ include "dms/outputs.kdl"
 include "dms/cursor.kdl"
 
 include "dms/windowrules.kdl"
+

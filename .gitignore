@@ -23,9 +23,24 @@ dotfiles/
 niri/cfg
 niri/*.backup*
 niri/dms/outputs.kdl
+niri/dms/colors.kdl
 
 # DMS
 DankMaterialShell/plugins/.repos/
 DankMaterialShell/plugins/dankGifSearch
 DankMaterialShell/plugins/calculator/test_*.js
 DankMaterialShell/plugins/calculator/agent_specs/
+DankMaterialShell/firefox.css
+DankMaterialShell/zen.css
+
+# Nvim
+nvim/lua/plugins/dankcolors.lua
+
+# Alactitty
+alacritty/dank-theme.toml
+
+# Fish
+fish/fish_variables
+
+# Starship
+star.toml
