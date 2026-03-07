@@ -1,0 +1,11 @@
+workspace "chat" {
+    open-on-output "Dell Inc. DELL U2515H 9X2VY68F06TL"
+}
+
+workspace "dev" {
+    open-on-output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+}
+
+workspace "term" {
+  open-on-output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+}

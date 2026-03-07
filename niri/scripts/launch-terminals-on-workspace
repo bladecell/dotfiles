@@ -1,0 +1,32 @@
+#!/usr/bin/env fish
+# niri-temp-workspace.fish
+# Launches 3 alacritty windows on the "temp" workspace in niri.
+# Layout: left column (70% width) with 2 stacked terminals,
+#         right column (30% width) with 1 terminal.
+#
+# Uses niri msg directly (fish, Arch).
+
+# ── Switch to (or create) the "temp" workspace ───────────────────────────────
+niri msg action focus-workspace temp
+
+# ── Window 1: spawn alacritty, set column width to 70% ───────────────────────
+niri msg action spawn -- alacritty
+sleep 0.2
+niri msg action set-column-width 70%
+niri msg action move-column-to-workspace term
+
+# ── Window 2: spawn alacritty in the same column (niri stacks by default) ────
+niri msg action spawn -- alacritty
+sleep 0.2
+niri msg action move-column-to-workspace term
+niri msg action consume-or-expel-window-left
+# Column stays at 70%; nothing extra needed
+
+# ── Window 3: spawn alacritty, move to new column on the right, 30% wide ─────
+niri msg action spawn -- alacritty
+sleep 0.2
+niri msg action move-column-to-workspace term
+niri msg action move-column-right
+niri msg action set-column-width 30%
+
+niri msg action focus-column-left
