@@ -1,12 +1,12 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/jpojsl/.config/DankMaterialShell/themes/catppuccin/theme.json",
+  "customThemeFile": "/home/kuba/.config/DankMaterialShell/themes/catppuccin/theme.json",
   "registryThemeVariants": {
     "catppuccin": {
       "dark": {
         "flavor": "mocha",
-        "accent": "teal"
+        "accent": "flamingo"
       }
     }
   },

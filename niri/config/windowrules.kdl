@@ -28,7 +28,7 @@ window-rule {
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
 //    match app-id=r#"^org\.gnome\.Nautilus$"#
-    match app-id=r#"^steam$"#
+    // match app-id=r#"^steam$"#
     match app-id=r#"^xdg-desktop-portal$"#
     match app-id=r#"zen$"# title="^Picture-in-Picture$" 
     open-floating true
@@ -65,6 +65,7 @@ window-rule {
   match app-id="teams-for-linux"
   match app-id="BeeperTexts"
   match app-id="org.mozilla.Thunderbird"
+  match app-id="discord"
   open-on-workspace "chat"
   default-column-width { proportion 0.75;}
 }
@@ -82,4 +83,14 @@ window-rule {
   default-column-width { proportion 0.5;}
 }
 
-
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+//
+// window-rule {
+//   match app-id="steam"
+//   // open-on-workspace "dev"
+//   open-floating false 
+//   default-column-width { proportion 0.5;}
+// }
