@@ -482,6 +482,10 @@
           "enabled": true
         },
         {
+          "id": "battery",
+          "enabled": true
+        },
+        {
           "id": "notificationButton",
           "enabled": true
         },
