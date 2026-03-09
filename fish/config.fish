@@ -178,3 +178,11 @@ end
 
 starship init fish | source
 zoxide init fish | source
+
+function z
+    if test (count $argv) -gt 0
+        __zoxide_z $argv; and ls
+    else
+        __zoxide_z ~; and ls
+    end
+end
