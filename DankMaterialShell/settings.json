@@ -1,7 +1,7 @@
 {
-  "currentThemeName": "custom",
-  "currentThemeCategory": "registry",
-  "customThemeFile": "/home/kuba/.config/DankMaterialShell/themes/catppuccin/theme.json",
+  "currentThemeName": "dynamic",
+  "currentThemeCategory": "dynamic",
+  "customThemeFile": "/home/jpojsl/.config/DankMaterialShell/themes/catppuccin/theme.json",
   "registryThemeVariants": {
     "catppuccin": {
       "dark": {
@@ -10,7 +10,7 @@
       }
     }
   },
-  "matugenScheme": "scheme-rainbow",
+  "matugenScheme": "scheme-vibrant",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
@@ -197,11 +197,11 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "iconTheme": "System Default",
   "cursorSettings": {
-    "theme": "capitaine-cursors",
-    "size": 24,
+    "theme": "Bibata-Modern-Classic",
+    "size": 20,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0

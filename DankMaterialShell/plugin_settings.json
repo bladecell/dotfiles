@@ -15,5 +15,8 @@
   "dankGifSearch": {
     "enabled": false,
     "preferredFormat": "gif"
+  },
+  "niriWindows": {
+    "enabled": true
   }
 }
