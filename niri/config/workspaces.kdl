@@ -9,3 +9,8 @@ workspace "dev" {
 workspace "term" {
   open-on-output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
 }
+
+workspace "bum" {
+    open-on-output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+}
+

@@ -43,7 +43,7 @@
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
-  "wallpaperFillMode": "Fill",
+  "wallpaperFillMode": "Stretch",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "showLauncherButton": true,
@@ -200,8 +200,8 @@
   "networkPreference": "auto",
   "iconTheme": "System Default",
   "cursorSettings": {
-    "theme": "capitaine-cursors",
-    "size": 24,
+    "theme": "Bibata-Modern-Classic",
+    "size": 20,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0
@@ -430,8 +430,35 @@
     }
   },
   "hyprlandOutputSettings": {},
-  "displayProfiles": {},
-  "activeDisplayProfile": {},
+  "displayProfiles": {
+    "niri": {
+      "profile_1775244839505_62sgqm": {
+        "id": "profile_1775244839505_62sgqm",
+        "name": "2 Monitors + TV",
+        "outputSet": [
+          "Dell Inc. DELL U2515H 9X2VY68F06TL",
+          "LG Electronics LG TV 0x01010101",
+          "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+        ],
+        "createdAt": 1775244839505,
+        "updatedAt": 1775244839505
+      },
+      "profile_1775248151692_zbo8b2": {
+        "id": "profile_1775248151692_zbo8b2",
+        "name": "2 Monitors",
+        "outputSet": [
+          "Dell Inc. DELL U2515H 9X2VY68F06TL",
+          "LG Electronics LG TV 0x01010101",
+          "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+        ],
+        "createdAt": 1775248151692,
+        "updatedAt": 1775248151692
+      }
+    }
+  },
+  "activeDisplayProfile": {
+    "niri": "profile_1775248151692_zbo8b2"
+  },
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
@@ -447,7 +474,11 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         "workspaceSwitcher",
-        "focusedWindow"
+        "focusedWindow",
+        {
+          "id": "clipboardPlus",
+          "enabled": true
+        }
       ],
       "centerWidgets": [
         "music",
@@ -455,6 +486,10 @@
         "weather"
       ],
       "rightWidgets": [
+        {
+          "id": "idleInhibitor",
+          "enabled": true
+        },
         {
           "id": "systemTray",
           "enabled": true
@@ -497,8 +532,8 @@
       "spacing": 4,
       "innerPadding": 4,
       "bottomGap": 0,
-      "transparency": 0.5,
-      "widgetTransparency": 1,
+      "transparency": 0,
+      "widgetTransparency": 0.75,
       "squareCorners": false,
       "noBackground": false,
       "gothCornersEnabled": false,
@@ -527,7 +562,9 @@
       "shadowIntensity": 0,
       "shadowOpacity": 60,
       "shadowColorMode": "text",
-      "shadowCustomColor": "#000000"
+      "shadowCustomColor": "#000000",
+      "clickThrough": false,
+      "widgetPadding": 12
     }
   ],
   "desktopClockEnabled": false,

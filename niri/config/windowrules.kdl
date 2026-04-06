@@ -93,4 +93,10 @@ window-rule {
 //   // open-on-workspace "dev"
 //   open-floating false 
 //   default-column-width { proportion 0.5;}
-// }
+// 
+//}
+
+window-rule {
+  match app-id="steam"
+  open-on-output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d"
+}
