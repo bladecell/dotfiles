@@ -6,16 +6,7 @@
     "noTrigger": true,
     "persistHistoryOnFile": true
   },
-  "homeAssistantMonitor": {
-    "enabled": false,
-    "hassUrl": "http://192.168.6.9:8123",
-    "hassToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI0Mzk2OWFhMjViNjY0M2ZiYTAzOWZhOWEzMzQ2ZWVjMyIsImlhdCI6MTc3NDUzNTMxNSwiZXhwIjoyMDg5ODk1MzE1fQ.G783z2DI0hZ8xt1w4RMnZPo6OkJGyer80TRu92aIemw",
-    "showButtonsOnStatusBar": true,
-    "entityIds": "sensor.esph_main_breaker_total_power, switch.tasmota",
-    "haRefreshCounter": 1,
-    "pinnedEntities": []
-  },
-  "developerUtilities": {
+    "developerUtilities": {
     "enabled": true
   },
   "dankGifSearch": {
