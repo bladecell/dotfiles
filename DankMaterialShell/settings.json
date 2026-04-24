@@ -168,6 +168,17 @@
   "centeringMode": "index",
   "clockDateFormat": "dd.MM.yyyy",
   "lockDateFormat": "",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -286,6 +297,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -327,6 +339,8 @@
   "lockAtStartup": false,
   "enableFprint": false,
   "maxFprintTries": 15,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "DP-3",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
@@ -474,11 +488,7 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         "workspaceSwitcher",
-        "focusedWindow",
-        {
-          "id": "clipboardPlus",
-          "enabled": true
-        }
+        "focusedWindow"
       ],
       "centerWidgets": [
         "music",

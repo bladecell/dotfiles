@@ -26,7 +26,7 @@ window-rule {
 }
 
 // @id=wr_1772706912072978823 @name=ONLYOFFICE
-window-rule { 
+window-rule {
     match app-id="^ONLYOFFICE$"
     default-column-width { proportion 0.7; }
 }
@@ -45,4 +45,8 @@ window-rule {
     min-height 720
 }
 
-
+// @id=wr_1775764482343499392 @name=prusa-slicer
+window-rule {
+    match app-id="^prusa-slicer$"
+    default-column-width { proportion 0.9; }
+}
