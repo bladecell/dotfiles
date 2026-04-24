@@ -1,9 +1,47 @@
-profile docked {
-    output "eDP-1" disable
-    output "Dell Inc. DELL U2515H 9X2VY68F06TL" enable mode 2560x1440@59.951Hz position 2560,0
-    output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d" enable mode 2560x1440@143.998Hz position 0,0
+output "Chimei Innolux Corporation 0x1522 Unknown" {
+    mode 1920x1080@120.015
+    position 0,0
+    alias $INTERNAL
 }
 
+output "Dell Inc. DELL U2515H 9X2VY68F06TL" {
+    mode 2560x1440@59.951Hz
+    position 2560,0
+    alias $HOME_RIGHT
+}
+
+output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d" {
+    mode 2560x1440@143.998Hz
+    position 0,0
+    alias $HOME_MAIN
+} 
+
+output "Microstep MAG 274CQF Unknown" {
+    mode 2560x1440@59.951Hz
+    position 0,0
+    alias $WORK_MAIN
+} 
+
+output "Unknown Unknown Unknown" {
+    mode 2560x1440@59.951Hz
+    position -2560,0
+    alias $WORK_SECONDARY
+}
+
+profile docked-home {
+    output $INTERNAL disable
+    output $HOME_RIGHT enable
+    output $HOME_MAIN enable
+    exec ~/.config/kanshi/workspaces-home.fish
+}
+
+profile docked-work {
+    output $INTERNAL disable
+    output $WORK_MAIN enable
+    output $WORK_SECONDARY enable
+    exec ~/.config/kanshi/workspaces-work.fish
+  }
+
 profile laptop-only {
-    output "eDP-1" enable
+    output $INTERNAL enable
 }

@@ -168,6 +168,17 @@
   "centeringMode": "index",
   "clockDateFormat": "dd.MM.yyyy",
   "lockDateFormat": "",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -237,8 +248,8 @@
   "soundNewNotification": true,
   "soundVolumeChanged": false,
   "soundPluggedIn": true,
-  "acMonitorTimeout": 600,
-  "acLockTimeout": 1800,
+  "acMonitorTimeout": 0,
+  "acLockTimeout": 0,
   "acSuspendTimeout": 0,
   "acSuspendBehavior": 2,
   "acProfileName": "",
@@ -286,6 +297,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -327,6 +339,8 @@
   "lockAtStartup": false,
   "enableFprint": false,
   "maxFprintTries": 15,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "DP-3",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
@@ -378,7 +392,7 @@
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
-  "displayNameMode": "model",
+  "displayNameMode": "system",
   "screenPreferences": {
     "notifications": [
       {
@@ -427,11 +441,30 @@
           "top-left"
         ]
       }
+    },
+    "DP-6": {
+      "disabled": false
     }
   },
   "hyprlandOutputSettings": {},
-  "displayProfiles": {},
-  "activeDisplayProfile": {},
+  "displayProfiles": {
+    "niri": {
+      "profile_1775636892051_onmdoe": {
+        "id": "profile_1775636892051_onmdoe",
+        "name": "WORK",
+        "outputSet": [
+          "DP-3",
+          "DP-6",
+          "eDP-1"
+        ],
+        "createdAt": 1775636892051,
+        "updatedAt": 1775636892051
+      }
+    }
+  },
+  "activeDisplayProfile": {
+    "niri": "profile_1775636892051_onmdoe"
+  },
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
@@ -456,6 +489,10 @@
       ],
       "rightWidgets": [
         {
+          "id": "idleInhibitor",
+          "enabled": true
+        },
+        {
           "id": "systemTray",
           "enabled": true
         },
@@ -470,7 +507,8 @@
         },
         {
           "id": "cpuUsage",
-          "enabled": true
+          "enabled": true,
+          "minimumWidth": true
         },
         {
           "id": "memUsage",

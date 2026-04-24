@@ -77,11 +77,11 @@ function help
 end
 
 # Ripgrep check and alias
-if command -v rg &>/dev/null
-    alias grep='rg'
-else
-    alias grep='/usr/bin/grep'
-end
+# if command -v rg &>/dev/null
+#     alias grep='rg'
+# else
+#     alias grep='/usr/bin/grep'
+# end
 
 # Extract function
 function extract

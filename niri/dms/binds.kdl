@@ -1,5 +1,6 @@
 binds {
     Alt+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    // Alt+V hotkey-overlay-title="Clipboard Manager" { spawn-sh "dms ipc call clipboardPlus togglePanel"; }
     Mod+Shift+Return hotkey-overlay-title="Launch Terminals On Term Workspace" { spawn-sh "~/.config/niri/scripts/launch-terminals-on-workspace"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
@@ -21,6 +22,10 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+    Mod+Alt+M allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+    Mod+Alt+Right allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    Mod+Alt+Up allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
+    Mod+Alt+Down allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -125,7 +130,7 @@ binds {
     Mod+Shift+E { quit; }
     Mod+B hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-browser"; }
     Mod+E hotkey-overlay-title="File Manager: Nautilus" { spawn "nautilus"; }
-    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }

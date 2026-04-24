@@ -18,5 +18,19 @@
   },
   "niriWindows": {
     "enabled": true
+  },
+  "clipboardPlus": {
+    "enabled": false,
+    "panelOpacityPinned": 95,
+    "listenClipboardWhileOpen": true,
+    "fullscreenMode": true,
+    "panelOpacityClipboard": 30,
+    "autoPasteOnClick": true,
+    "autoPasteDelay": 200,
+    "backgroundOpacity": 55,
+    "autoPasteOnEnterSelect": true,
+    "showBarWidget": true,
+    "tabOrder": "clipboard,search,category,pinned,todo",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo"
   }
 }

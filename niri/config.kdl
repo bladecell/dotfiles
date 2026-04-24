@@ -35,7 +35,7 @@ input {
             tap // Enable tap-to-click
             natural-scroll // Enable natural (macOS-style) scrolling
         }
-    focus-follows-mouse max-scroll-amount="90%"  // Automatically focus windows under the mouse pointer
+    focus-follows-mouse max-scroll-amount="50%"  // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
 // You can configure outputs by their name, which you can find
@@ -178,6 +178,7 @@ animations {
 
 debug {
     honor-xdg-activation-with-invalid-serial
+    disable-direct-scanout
 }
 
 // Override to disable super+tab
@@ -190,9 +191,15 @@ recent-windows {
     }
 }
 
+xwayland-satellite {
+    path "xwayland-satellite"
+}
+
+
 include "config/workspaces.kdl"
 include "config/windowrules.kdl"
 include "config/autostart.kdl"
+//include "config/animations.kdl"
 // Include dms files
 include "dms/colors.kdl"
 include "dms/layout.kdl"

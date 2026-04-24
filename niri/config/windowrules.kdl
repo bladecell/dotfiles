@@ -79,7 +79,8 @@ window-rule {
 
 window-rule {
   match app-id="winboat"
-  open-on-workspace "dev"
+  match app-id="xfreerdp"
+  open-on-workspace "win"
   default-column-width { proportion 0.5;}
 }
 

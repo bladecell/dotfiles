@@ -44,3 +44,6 @@ fish/fish_variables
 
 # Starship
 star.toml
+
+#Ghostty
+ghostty/themes/dankcolors

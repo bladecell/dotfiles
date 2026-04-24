@@ -1,0 +1,5 @@
+// spawn-at-startup "sh" "-c" "wl-paste --watch cliphist store"
+spawn-at-startup "beeper"
+spawn-at-startup "teams-for-linux"
+spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE"
+spawn-at-startup "sh" "-c" "sleep 2; thunderbird"
