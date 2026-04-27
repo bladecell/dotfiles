@@ -1,0 +1,45 @@
+@import 'dank-colors.css';
+
+window.nautilus-window,
+window.filechooser,
+window.filechooser headerbar,
+filechooser box box paned box.vertical box#pathbarbox,
+filechooser actionbar box  {
+    background-color: alpha(@window_bg_color, 0.7);
+}
+
+window.nautilus-window .sidebar-pane,
+filechooser box box paned .sidebar {
+    background-color: transparent;
+}
+
+window.nautilus-window .content-pane,
+filechooser box box paned box.vertical box.horizontal .view {
+    background-color: alpha(@view_bg_color, 0.3);
+}
+
+
+/* Popover rendered as its own surface */
+.nautilus-window > popover.background,
+popover.background > contents {
+    background-color: alpha(@window_bg_color, 0.1);
+}
+
+/* GTK4 menus as toplevels */
+window.popup,
+window.popup > contents {
+    background-color: alpha(@window_bg_color, 0.1);
+}
+
+window.dialog,
+window.dialog > contents,
+window.dialog headerbar {
+    background-color: alpha(@window_bg_color, 0.3);
+}
+
+/* Content inside properties */
+window.dialog .view,
+window.dialog scrolledwindow,
+window.dialog box {
+    background-color: alpha(@view_bg_color, 0.3);
+}

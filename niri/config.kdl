@@ -196,6 +196,14 @@ xwayland-satellite {
 }
 
 
+blur {
+    passes 3
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
+
+
 include "config/workspaces.kdl"
 include "config/windowrules.kdl"
 include "config/autostart.kdl"
