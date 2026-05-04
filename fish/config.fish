@@ -60,6 +60,9 @@ alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 
+set -x IDF_PATH /home/jpojsl/.espressif/v6.0/esp-idf
+set -x PATH $IDF_PATH/tools $PATH
+
 # Search files in current folder
 alias f="fd . | grep "
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
