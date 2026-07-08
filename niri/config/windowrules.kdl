@@ -72,7 +72,7 @@ window-rule {
 
 window-rule {
   match app-id="Code Composer Studio"
-  match app-id="codium"
+  // match app-id="codium"
   open-on-workspace "dev"
   default-column-width { proportion 0.9;}
 }

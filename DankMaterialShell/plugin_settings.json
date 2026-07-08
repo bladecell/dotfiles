@@ -32,5 +32,24 @@
     "showBarWidget": true,
     "tabOrder": "clipboard,search,category,pinned,todo",
     "tabOrderEnabled": "clipboard,search,category,pinned,todo"
+  },
+  "ocrScanner": {
+    "enabled": true
+  },
+  "quickCapture": {
+    "enabled": true,
+    "showToolbar": true,
+    "showToolbarBorder": false,
+    "doneAction": "clipboard"
+  },
+  "floaty": {
+    "enabled": true,
+    "autoMinimize": false
+  },
+  "dankTodo": {
+    "enabled": true
+  },
+  "hiddenBar": {
+    "enabled": true
   }
 }

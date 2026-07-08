@@ -13,12 +13,6 @@ window-rule {
     default-column-width { proportion 0.9; }
 }
 
-// @id=wr_1771701592020901457 @name=codium
-window-rule {
-    match app-id="^codium$"
-    default-column-width { proportion 0.9; }
-}
-
 // @id=wr_1772706882359084973 @name=zen
 window-rule {
     match app-id="^zen$"
@@ -44,4 +38,10 @@ window-rule {
     match app-id="^winboat-D o c k l i g h t$" title="License"
     min-width 500
     min-height 500
+}
+
+// @id=wr_1780571970087873182 @name=codium
+window-rule {
+    match app-id="^codium$"
+    default-column-width { proportion 0.9; }
 }

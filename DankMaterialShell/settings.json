@@ -182,12 +182,6 @@
   "greeterEnableFprint": false,
   "greeterEnableU2f": false,
   "greeterWallpaperPath": "",
-  "greeterUse24HourClock": true,
-  "greeterShowSeconds": false,
-  "greeterPadHours12Hour": false,
-  "greeterLockDateFormat": "",
-  "greeterFontFamily": "",
-  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -217,7 +211,7 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "wifi",
+  "networkPreference": "ethernet",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "Bibata-Modern-Classic",
@@ -276,7 +270,12 @@
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
   "brightnessDevicePins": {},
-  "wifiNetworkPins": {},
+  "wifiNetworkPins": {
+    "preferredWifi": [
+      "NargoyleAerospaceTech_2G4",
+      "NargoyleAerospaceTech_5G"
+    ]
+  },
   "bluetoothDevicePins": {},
   "audioInputDevicePins": {},
   "audioOutputDevicePins": {},
@@ -284,6 +283,10 @@
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
+  "muxType": "tmux",
+  "muxUseCustomCommand": false,
+  "muxCustomCommand": "",
+  "muxSessionFilter": "",
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
   "matugenTemplateNiri": true,
@@ -498,6 +501,18 @@
       ],
       "rightWidgets": [
         {
+          "id": "dankTodo",
+          "enabled": true
+        },
+        {
+          "id": "quickCapture",
+          "enabled": true
+        },
+        {
+          "id": "ocrScanner",
+          "enabled": true
+        },
+        {
           "id": "idleInhibitor",
           "enabled": true
         },
@@ -523,10 +538,6 @@
           "id": "memUsage",
           "enabled": true,
           "minimumWidth": true
-        },
-        {
-          "id": "network_speed_monitor",
-          "enabled": true
         },
         {
           "id": "battery",
