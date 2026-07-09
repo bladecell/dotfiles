@@ -57,7 +57,7 @@
     "enabled": true
   },
   "clipboardPlus": {
-    "enabled": false,
+    "enabled": true,
     "backgroundOpacity": 5,
     "panelOpacityClipboard": 80,
     "autoPasteOnClick": true,
@@ -72,6 +72,24 @@
     "tabOrder": "clipboard,search,category,pinned,todo",
     "tabOrderEnabled": "clipboard,search,category,pinned,todo",
     "exportPath": "",
-    "autoPasteDelay": 400
+    "autoPasteDelay": 300
+  },
+  "quickCapture": {
+    "enabled": true,
+    "postNotification": "toast",
+    "color_palette_preset": "classic",
+    "editQuality": "original",
+    "showCanvasBorder": false,
+    "textFontFamily": "monospace",
+    "textInputMode": "inline"
+  },
+  "floaty": {
+    "enabled": true
+  },
+  "dcalUpcoming": {
+    "enabled": false
+  },
+  "ddcBrightness": {
+    "enabled": false
   }
 }

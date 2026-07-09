@@ -10,8 +10,9 @@ background-opacity = 0.8
 scrollback-limit = 3023
 
 # Cursor
+shell-integration-features = no-cursor
 cursor-style = block
-cursor-style-blink = true
+cursor-style-blink = false
 
 # Mouse
 mouse-hide-while-typing = true
@@ -22,7 +23,7 @@ copy-on-select = true
 
 
 # Font
-font-family = "MesloLGS Nerd Font Mono"
+font-family = "Caskaydia Cove Nerd Font Mono"
 font-size = 12
 
 # Keybindings

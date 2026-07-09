@@ -52,8 +52,10 @@ window-rule {
 
 // Open dms windows as floating by default
 window-rule {
-    match app-id=r#"org.quickshell$"#
+    match app-id=r#"com.danklinux.dms$"#
     open-floating true
+    default-column-width { proportion 0.4; }
+    default-window-height { fixed 1000; }
 }
 window-rule {
     match app-id="vivaldi-stable"
@@ -70,12 +72,12 @@ window-rule {
   default-column-width { proportion 0.75;}
 }
 
-window-rule {
-  match app-id="Code Composer Studio"
-  match app-id="codium"
-  open-on-workspace "dev"
-  default-column-width { proportion 0.9;}
-}
+// window-rule {
+//   match app-id="Code Composer Studio"
+//   match app-id="codium"
+//   open-on-workspace "dev"
+//   default-column-width { proportion 0.9;}
+// }
 
 window-rule {
   match app-id="winboat"
@@ -117,9 +119,21 @@ window-rule {
 // Disable xray blur on floating
 window-rule {
     match is-floating=true
+    match app-id="discord"
 
     background-effect {
-        xray false
+        xray true
+    }
+}
+
+window-rule {
+    match app-id="Spotify"
+
+    popups {
+        background-effect {
+            xray false
+            blur true
+        }
     }
 }
 
@@ -137,9 +151,30 @@ window-rule {
 
         background-effect {
             blur true
+            xray false
         }
     }
 }
+
+window-rule {
+    match app-id="zen"
+
+    popups {
+        // Matches the default libadwaita pop-up corner radius.
+        geometry-corner-radius 15
+
+        // Note: it'll look better to set background opacity
+        // through your GTK theme CSS and not here.
+        // This is just an example that makes it look obvious.
+        opacity 0.95
+
+        background-effect {
+            blur true
+            xray false
+        }
+    }
+}
+
 //
 // window-rule {
 //   match app-id="steam"

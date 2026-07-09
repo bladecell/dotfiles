@@ -95,7 +95,7 @@ function extract
                 case '*.bz2'
                     bunzip2 $archive
                 case '*.rar'
-                    rar x $archive
+                    unrar x $archive
                 case '*.gz'
                     gunzip $archive
                 case '*.tar'
@@ -186,3 +186,7 @@ function z
         __zoxide_z ~; and ls
     end
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/kuba/.lmstudio/bin
+# End of LM Studio CLI section

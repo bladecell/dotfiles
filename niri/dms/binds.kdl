@@ -1,6 +1,6 @@
 binds {
-    Alt+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    // Alt+V hotkey-overlay-title="Clipboard Manager" { spawn-sh "dms ipc call clipboardPlus togglePanel"; }
+    // Alt+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Alt+V hotkey-overlay-title="Clipboard Manager" { spawn-sh "dms ipc call clipboardPlus togglePanel"; }
     Mod+Shift+Return hotkey-overlay-title="Launch Terminals On Term Workspace" { spawn-sh "~/.config/niri/scripts/launch-terminals-on-workspace"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
@@ -125,7 +125,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
-    Print { screenshot; }
+    Print { spawn "dms" "ipc" "call" "quickCapture" "screenshot" "default"; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Mod+B hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-browser"; }
