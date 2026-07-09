@@ -59,20 +59,22 @@
   "clipboardPlus": {
     "enabled": true,
     "backgroundOpacity": 5,
-    "panelOpacityClipboard": 80,
+    "panelOpacityClipboard": 100,
     "autoPasteOnClick": true,
     "autoPasteOnRightClick": false,
     "autoPasteOnEnterSelect": true,
     "listenClipboardWhileOpen": true,
     "maxPinnedImageMb": 21,
     "showBarWidget": true,
-    "panelOpacityPinned": 80,
+    "panelOpacityPinned": 100,
     "dataBasePath": "",
     "maxPinnedTextMb": 1,
-    "tabOrder": "clipboard,search,category,pinned,todo",
-    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
+    "tabOrder": "clipboard,search,category,pinned,todo,emoji",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo,emoji",
     "exportPath": "",
-    "autoPasteDelay": 300
+    "autoPasteDelay": 300,
+    "fullscreenMode": true,
+    "panelMarginLeft": 0
   },
   "quickCapture": {
     "enabled": true,

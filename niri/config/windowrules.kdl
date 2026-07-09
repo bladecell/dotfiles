@@ -182,3 +182,12 @@ window-rule {
 //   open-floating false 
 //   default-column-width { proportion 0.5;}
 // }
+
+// layer-rule {
+//     match namespace="^dms-clipboardPlus-panel"
+//
+//     background-effect {
+//         blur true
+//         xray false
+//     }
+// }
