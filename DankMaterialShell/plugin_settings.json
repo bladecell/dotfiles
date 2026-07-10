@@ -17,10 +17,10 @@
     "preferredFormat": "gif"
   },
   "niriWindows": {
-    "enabled": true
+    "enabled": false
   },
   "clipboardPlus": {
-    "enabled": false,
+    "enabled": true,
     "panelOpacityPinned": 95,
     "listenClipboardWhileOpen": true,
     "fullscreenMode": true,
@@ -34,7 +34,7 @@
     "tabOrderEnabled": "clipboard,search,category,pinned,todo"
   },
   "ocrScanner": {
-    "enabled": true
+    "enabled": false
   },
   "quickCapture": {
     "enabled": true,
