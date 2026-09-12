@@ -50,3 +50,23 @@ window-rule {
     match app-id="^prusa-slicer$"
     default-column-width { proportion 0.9; }
 }
+
+// @id=wr_1786046892235103112 @name=kicad
+window-rule {
+    match app-id="^kicad$" title="Chooser"
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
+}
+
+// @id=wr_1786046923680826085 @name=kicad
+window-rule {
+    match app-id="^kicad$" title="Editor"
+    default-column-width { proportion 0.9; }
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}

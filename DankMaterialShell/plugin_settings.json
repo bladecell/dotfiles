@@ -83,7 +83,8 @@
     "editQuality": "original",
     "showCanvasBorder": false,
     "textFontFamily": "monospace",
-    "textInputMode": "inline"
+    "textInputMode": "inline",
+    "modalDisplayMode": "floating"
   },
   "floaty": {
     "enabled": true
@@ -93,5 +94,9 @@
   },
   "ddcBrightness": {
     "enabled": false
+  },
+  "dankTranslate": {
+    "enabled": true,
+    "defaultLang": "cs"
   }
 }

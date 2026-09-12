@@ -1,11 +1,12 @@
 [mgr]
-ratio = [0, 4, 4]
+ratio = [0, 6, 4]
 show_hidden = false
 
 [[mgr.rules]]
 name = "/home/jpojsl/Downloads"
 sort_by = "modified"
 sort_reverse = true  # newest first, optional
+linemode = "size_and_mtime"
 
 [plugin]
 prepend_previewers = [

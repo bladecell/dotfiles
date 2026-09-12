@@ -126,6 +126,18 @@ window-rule {
     }
 }
 
+// DMS 1.6 settings is a regular floating window, not a layer surface.
+// Override the generic floating-window xray and global opacity rules.
+window-rule {
+    match app-id=r#"^com\.danklinux\.dms$"#
+    opacity 1.0
+
+    background-effect {
+        xray false
+        blur true
+    }
+}
+
 window-rule {
     match app-id="Spotify"
 
@@ -160,13 +172,9 @@ window-rule {
     match app-id="zen"
 
     popups {
-        // Matches the default libadwaita pop-up corner radius.
+        // Keep the blur tight because Zen reports popup geometry beyond its visible surface.
         geometry-corner-radius 15
-
-        // Note: it'll look better to set background opacity
-        // through your GTK theme CSS and not here.
-        // This is just an example that makes it look obvious.
-        opacity 0.95
+        opacity 0.88
 
         background-effect {
             blur true

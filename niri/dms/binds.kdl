@@ -125,7 +125,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
-    Print { spawn "dms" "ipc" "call" "quickCapture" "screenshot" "default"; }
+    Print { spawn "dms" "ipc" "call" "quickCapture" "screenshot" "region" "edit"; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Mod+B hotkey-overlay-title="Open Browser: Zen Browser" { spawn "zen-browser"; }
