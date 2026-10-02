@@ -63,7 +63,7 @@ window-rule {
 
 window-rule {
   match app-id="teams-for-linux"
-  match app-id="BeeperTexts"
+  match app-id="Beeper"
   match app-id="org.mozilla.Thunderbird"
   match app-id="discord"
   open-on-workspace "chat"
@@ -91,17 +91,16 @@ window-rule {
 
 
 //DMS
-layer-rule {
-    match namespace="^dms:"
+
+// DMS 1.6 settings is a regular floating window, not a layer surface.
+// Override the generic floating-window xray and global opacity rules.
+window-rule {
+    match app-id=r#"^com\.danklinux\.dms$"#
+    opacity 1.0
 
     background-effect {
         xray false
-    }
-
-    popups {
-        background-effect {
-            xray false
-        }
+        blur true
     }
 }
 
@@ -111,6 +110,17 @@ window-rule {
 
     background-effect {
         blur true
+    }
+
+    popups {
+          geometry-corner-radius 15
+
+          opacity 0.90
+          background-effect {
+              xray false
+              blur true
+          }
+        
     }
 }
 

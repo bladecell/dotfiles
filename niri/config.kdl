@@ -35,7 +35,7 @@ input {
             tap // Enable tap-to-click
             natural-scroll // Enable natural (macOS-style) scrolling
         }
-    focus-follows-mouse max-scroll-amount="50%"  // Automatically focus windows under the mouse pointer
+    focus-follows-mouse max-scroll-amount="0%"  // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
 // You can configure outputs by their name, which you can find
@@ -124,6 +124,14 @@ layout {
 layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
+}
+// DMS publishes its own per-widget blur regions on this full-screen surface.
+layer-rule {
+    match namespace=r#"^dms:"#
+
+    background-effect {
+        xray false
+    }
 }
 overview {
     workspace-shadow {
@@ -217,4 +225,3 @@ include "dms/outputs.kdl"
 include "dms/cursor.kdl"
 
 include "dms/windowrules.kdl"
-

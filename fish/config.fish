@@ -12,9 +12,9 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 alias reload='source ~/.config/fish/config.fish'
 alias ll='eza -l --icons --git'
 alias la='eza -la --icons --git'
-alias lt='eza -T -L 4 --icons'
+alias lt='eza -T -L 4 --icons auto'
 alias l='eza -lah --icons --git'
-alias ls='eza --icons'
+alias ls='eza --icons auto'
 alias grep='grep --color=auto'
 alias patch-vivaldi='~/.config/vivaldi_mods/auto-mod-install.sh'
 alias dotfiles='git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME/.config'
@@ -199,5 +199,4 @@ function y
     end
     command rm -f -- "$tmp"
 end
-
-
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

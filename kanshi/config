@@ -16,6 +16,7 @@ output "ViewSonic Corporation XG2703-GS #ASNNX05/aO3d" {
     alias $HOME_MAIN
 } 
 
+# Run ~/.config/kanshi/swap-work-monitors.fish to swap these work displays.
 output "Microstep MAG 274CQF Unknown" {
     mode 2560x1440@59.951Hz
     position 0,0
@@ -24,7 +25,7 @@ output "Microstep MAG 274CQF Unknown" {
 
 output "Unknown Unknown Unknown" {
     mode 2560x1440@59.951Hz
-    position -2560,0
+    position 2560,0
     alias $WORK_SECONDARY
 }
 

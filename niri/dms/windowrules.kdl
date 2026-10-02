@@ -1,47 +1,54 @@
 // DMS Window Rules - Managed by DankMaterialShell
 // Do not edit manually - changes may be overwritten
 
-// @id=wr_1771588197558163108 @name=vivaldi-stable
+// @id=wr_1786013142196961269 @name=kicad
 window-rule {
-    match app-id="^vivaldi-stable$" title="^Bitwarden"
-    open-floating true
-}
-
-// @id=wr_1771694638051196713 @name=PrusaSlicer
-window-rule {
-    match app-id="^PrusaSlicer$" title="Slic3r"
+    match app-id="^kicad$" title="Schematic"
+    match app-id="^kicad$" title="PCB\\sEditor"
+    match app-id="^kicad$" title="Symbol\\sEditor"
+    match app-id="^kicad$" title="Footprint\\sEditor"
     default-column-width { proportion 0.9; }
 }
 
-// @id=wr_1772706882359084973 @name=zen
+// @id=wr_1786087737170412873 @name=zen
 window-rule {
     match app-id="^zen$"
     default-column-width { proportion 0.9; }
 }
 
-// @id=wr_1772706912072978823 @name=ONLYOFFICE
+// @id=wr_1786090885699473164 @name=kicad
+window-rule {
+    match app-id="^kicad$" title="Chooser"
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
+}
+
+// @id=wr_1786102117836631937 @name=bf_config_app
+window-rule {
+    match app-id="^bf_config_app$"
+    default-column-width { proportion 0.8; }
+}
+
+// @id=wr_1786358455744408626 @name=ONLYOFFICE
 window-rule {
     match app-id="^ONLYOFFICE$"
-    default-column-width { proportion 0.7; }
+    default-column-width { proportion 0.8; }
 }
 
-// @id=wr_1772792144858062175 @name=winboat-BlackFin DB Loader
+// @id=wr_1786523058355112251 @name=STM32CubeIDE
 window-rule {
-    match app-id="^winboat-BlackFin DB Loader$"
-    open-floating true
-    min-width 300
-    min-height 150
+    match app-id="^STM32CubeIDE$"
+    default-column-width { proportion 0.9; }
 }
 
-// @id=wr_1775741916775612441 @name=winboat-D o c k l i g h t
-window-rule {
-    match app-id="^winboat-D o c k l i g h t$" title="License"
-    min-width 500
-    min-height 500
-}
-
-// @id=wr_1780571970087873182 @name=codium
+// @id=wr_1786689468365624789 @name=codium
 window-rule {
     match app-id="^codium$"
     default-column-width { proportion 0.9; }
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
 }

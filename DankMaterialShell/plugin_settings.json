@@ -27,11 +27,12 @@
     "panelOpacityClipboard": 30,
     "autoPasteOnClick": true,
     "autoPasteDelay": 200,
-    "backgroundOpacity": 55,
+    "backgroundOpacity": 0,
     "autoPasteOnEnterSelect": true,
     "showBarWidget": true,
-    "tabOrder": "clipboard,search,category,pinned,todo",
-    "tabOrderEnabled": "clipboard,search,category,pinned,todo"
+    "tabOrder": "clipboard,search,category,pinned,todo,emoji",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
+    "useDmsClipboard": true
   },
   "ocrScanner": {
     "enabled": false
@@ -40,7 +41,11 @@
     "enabled": true,
     "showToolbar": true,
     "showToolbarBorder": false,
-    "doneAction": "clipboard"
+    "doneAction": "both",
+    "postNotification": "toast",
+    "editQuality": "original",
+    "color_palette_preset": "custom",
+    "toolbar_color_primary": "#FFB3B4"
   },
   "floaty": {
     "enabled": true,
@@ -50,6 +55,27 @@
     "enabled": true
   },
   "hiddenBar": {
+    "enabled": true
+  },
+  "networkIndicator": {
+    "enabled": true,
+    "displayMode": "combined"
+  },
+  "wallpaperBing": {
+    "enabled": false,
+    "dailyRefreshTime": "11:29",
+    "enableDailyRefresh": true
+  },
+  "vscodeLauncher": {
+    "enabled": false,
+    "editorMode": "VSCodium"
+  },
+  "dankTranslate": {
+    "enabled": true,
+    "defaultLang": "cs",
+    "trigger": "/translate"
+  },
+  "codexUsage": {
     "enabled": true
   }
 }
