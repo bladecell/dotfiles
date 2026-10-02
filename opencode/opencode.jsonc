@@ -2,6 +2,17 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": true,
   "plugins": [],
+  "agents": {
+    "explore": {
+      "model": "opencode-go/mimo-v2.6-flash",
+      "permissions": [
+        { "action": "skill", "resource": "*", "effect": "allow" }
+      ]
+    },
+    "general": {
+      "model": "opencode-go/minimax-m3"
+    }
+  },
   "mcp": {
     "servers": {
       "context7": {
