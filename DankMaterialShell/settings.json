@@ -72,6 +72,7 @@
   },
   "launcherUseOverlayLayer": true,
   "useAutoLocation": true,
+  "networkPreference": "wifi",
   "cursorSettings": {
     "theme": "Bibata-Modern-Classic",
     "size": 20,

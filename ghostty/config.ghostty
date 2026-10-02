@@ -13,6 +13,8 @@ scrollback-limit = 3023
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = false
+custom-shader = "~/.config/ghostty/cursor_glide.glsl"
+cursor-opacity = 0
 
 # Mouse
 mouse-hide-while-typing = true

@@ -70,3 +70,10 @@ window-rule {
     match app-id="^com.danklinux.dms$"
     open-floating true
 }
+
+// @id=wr_1790442547371014298 @name=Beeper
+window-rule {
+    match app-id="^Beeper$" at-startup=true
+    open-on-workspace "chat"
+    default-column-width { proportion 0.8; }
+}
