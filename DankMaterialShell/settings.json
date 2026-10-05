@@ -199,7 +199,8 @@
       "island": true,
       "islandReserveThickness": 40,
       "islandCompactThickness": 30,
-      "islandTransparency": 0.55
+      "islandTransparency": 0.55,
+      "islandNotificationExpand": true
     }
   ],
   "desktopClockCustomColor": {

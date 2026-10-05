@@ -212,9 +212,16 @@ Four agents are renamed from their upstream file:
 ### 5a. Delegation (`codebase-orchestrator`)
 
 `codebase-orchestrator` is a **primary** agent that drives a phased flow:
-assess → classify → delegate investigation → consolidate → propose →
-approval gate → delegate implementation → integrate → validate → review →
-complete.
+classify → work graph → investigate → consolidate → approval → implement →
+reconcile → validate → review → complete.
+
+It includes a **Fast Path** (skip the graph/approval/review for LOW-risk,
+obvious, single-file changes), a **Work Graph** of lanes (objective,
+dependencies, mode, specialist, write ownership, validation owner), two
+**Delegation Modes** (INVESTIGATION-ONLY vs IMPLEMENTATION-AUTHORIZED, the
+latter requiring `verification-planning` and `tdd`), a **Preserve Open
+Decisions** rule, **session reuse** for related follow-ups, and a
+**Completion Standard** requiring red-before-green evidence per lane.
 
 Delegation is gated by v2 `permissions` rules with `action: subagent`:
 a blanket `resource: "*"` deny followed by explicit `allow` entries for the
