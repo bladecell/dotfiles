@@ -122,3 +122,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## Anti Slop (miqdadbadjuber/anti-slop)
+
+Source: https://github.com/miqdadbadjuber/anti-slop
+Revision: 388cbe3b6c37d5175b9f460015bb092ef9e34894
+Skills: antislop, antislop-ui, antislop-copywriting, antislop-human,
+antislop-layoutmobile, antislop-code. Copied unmodified.
+
+MIT License
+
+MIT License
+
+Copyright (c) 2026 Miqdad Badjuber (antislop)
