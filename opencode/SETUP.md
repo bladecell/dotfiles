@@ -32,12 +32,18 @@ Changes are read at startup; restart OpenCode to apply.
   "plugins": [],
   "agents": {
     "explore": {
-      "model": "opencode-go/mimo-v2.6-flash",
+      "model": "openai/gpt-6-luna#low",
       "permissions": [
-        { "action": "skill", "resource": "*", "effect": "allow" }
+        { "action": "skill", "resource": "*", "effect": "allow" },
+        { "action": "external_directory", "resource": "~/.config/opencode/skills/**", "effect": "allow" }
       ]
     },
-    "general": { "model": "opencode-go/minimax-m3" }
+    "general": {
+      "model": "openai/gpt-6-sol",
+      "permissions": [
+        { "action": "external_directory", "resource": "~/.config/opencode/skills/**", "effect": "allow" }
+      ]
+    }
   },
   "mcp": {
     "servers": {
@@ -61,11 +67,20 @@ Changes are read at startup; restart OpenCode to apply.
 The `agents` overrides pin the built-in subagents to tiers. Without them,
 `explore` and `general` have no model and inherit the parent session's model
 (e.g. the orchestrator's DEEP model). `explore` is pinned FAST
-(`mimo-v2.6-flash`); `general` is pinned STANDARD (`minimax-m3`) because it does
+(`openai/gpt-6-luna`); `general` is pinned STANDARD (`openai/gpt-6-sol`) because it does
 multi-step implementation work.
 
 V2 notes: MCP servers live under `mcp.servers`; disable with `"disabled": true`.
 The plugin key is `plugins` (plural) — an empty list here means no plugins.
+
+The `external_directory` allows (on `explore`, `general`, and every agent) are
+required so skill helper scripts under `~/.config/opencode/skills/**` are
+reachable. Skill scripts live outside the project workspace, so without a
+recursive allow on that path they fall to the default `external_directory: ask`,
+which non-interactive subagents cannot answer (surfacing as `Permission denied`,
+e.g. the `codemap` helper). The allow must use `**` (a one-level `*` does not
+reach nested script paths) and is applied per-agent so it resolves after the
+built-in `ask` default.
 
 ## 3. Global rules (AGENTS.md)
 
@@ -145,7 +160,7 @@ Adapted from the `oh-my-opencode-slim` plugin bundle, except `logo-design`
 ## 5. Agents (21)
 
 All live in `~/.config/opencode/agents/<name>.md`. `mode` is `primary` or
-`subagent`; `model` is an OpenCode Go model ID. System prompts for the specialists are deliberately
+`subagent`; `model` is an OpenAI model ID. System prompts for the specialists are deliberately
 condensed: role + when-to-use + domain rules + a short process + an output
 contract, with no fabricated metrics, pseudo message-bus JSON, or stale
 cross-agent references. `codebase-orchestrator` is excluded and keeps its full
@@ -160,29 +175,30 @@ Taxonomy:
 - **Validation / Review:** `test-engineer`, `security-reviewer`, `code-reviewer`, `architect-reviewer`, `performance-engineer`, `ui-ux-tester`
 - **Documentation:** `api-documenter`
 
-| Agent | Mode | Tier | Model |
-|---|---|---|---|
-| `codebase-orchestrator` | primary | DEEP | `opencode-go/glm-5.3` |
-| `architect-reviewer` | subagent | DEEP | `opencode-go/qwen3.8-max` |
-| `security-reviewer` | subagent | DEEP | `opencode-go/kimi-k3` |
-| `debugger` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `typescript-pro` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `python-pro` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `rust-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `database-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `websocket-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `performance-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `embedded-systems` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `iot-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `api-designer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `code-reviewer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `test-engineer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `docker-expert` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `ui-designer` | subagent | STANDARD | `opencode-go/minimax-m3` |
-| `agent-organizer` | subagent | FAST | `opencode-go/mimo-v2.6-flash` |
-| `api-documenter` | subagent | FAST | `opencode-go/mimo-v2.6-flash` |
-| `ui-ux-tester` | subagent | FAST | `opencode-go/mimo-v2.6-flash` |
-| `researcher` | subagent | FAST | `opencode-go/mimo-v2.6-flash` |
+| Agent | Mode | Tier | Model | Reasoning |
+|---|---|---|---|---|
+| `codebase-orchestrator` | primary | DEEP | `openai/gpt-6.1-sol` | medium |
+| `architect-reviewer` | subagent | DEEP | `openai/gpt-6.1-sol` | high |
+| `security-reviewer` | subagent | DEEP | `openai/gpt-6.1-sol` | high |
+| `debugger` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `typescript-pro` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `python-pro` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `rust-engineer` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `database-engineer` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `websocket-engineer` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `performance-engineer` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `embedded-systems` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `iot-engineer` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `api-designer` | subagent | STANDARD | `openai/gpt-6.1-sol` | medium |
+| `code-reviewer` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `test-engineer` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `docker-expert` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `ui-designer` | subagent | STANDARD | `openai/gpt-6-luna` | medium |
+| `agent-organizer` | subagent | FAST | `openai/gpt-6-luna` | low |
+| `api-documenter` | subagent | FAST | `openai/gpt-6-luna` | low |
+| `ui-ux-tester` | subagent | FAST | `openai/gpt-6-luna` | low |
+| `researcher` | subagent | FAST | `openai/gpt-6-luna` | low |
+| `explore` (built-in) | subagent | FAST | `openai/gpt-6-luna` | low |
 
 **Source:** VoltAgent `awesome-claude-code-subagents`
 (https://github.com/VoltAgent/awesome-claude-code-subagents), `main` observed at
@@ -223,6 +239,17 @@ latter requiring `verification-planning` and `tdd`), a **Preserve Open
 Decisions** rule, **session reuse** for related follow-ups, and a
 **Completion Standard** requiring red-before-green evidence per lane.
 
+Every mutable specialist also carries a **Parent Mode Contract**: the parent's
+`INVESTIGATION-ONLY` / `IMPLEMENTATION-AUTHORIZED` mode overrides the child's own
+standing prompt, and with no mode supplied the child must not modify tracked
+files. Review is **risk-based**: LOW → implementation → focused validation;
+MEDIUM → add `code-reviewer`; HIGH → add the relevant specialist review plus
+security/architecture review when relevant. Role splits: `api-designer`
+(contract) vs `api-documenter` (docs); `code-reviewer` (diff) vs
+`security-reviewer` (security); `performance-engineer` (app/infra) vs
+`database-engineer` (SQL/index/query); `websocket-engineer` only for
+realtime-specific problems.
+
 Delegation is gated by v2 `permissions` rules with `action: subagent`:
 a blanket `resource: "*"` deny followed by explicit `allow` entries for the
 specialists above (`explore`, `researcher`, `debugger`, `agent-organizer`, `api-designer`,
@@ -261,11 +288,12 @@ FAST — search / docs / triage / simple validation
   └── api-documenter
 ```
 
-| Tier | Model | Rationale |
-|---|---|---|
-| DEEP | `glm-5.3`, `kimi-k3`, `qwen3.8-max` | orchestration, architecture, security, very hard debugging. Only three agents, spread across three frontier models because each has a $15/month Go allowance. |
-| STANDARD | `minimax-m3` | most implementation, testing, and review; capable coder with a large ($60/month) allowance. |
-| FAST | `mimo-v2.6-flash` | search, docs, triage, simple validation; cheapest zero-retention model with a large allowance. |
+Models and reasoning are assigned **per agent** (see the table in §5). Two OpenAI families are used:
+
+- `openai/gpt-6.1-sol` — orchestration and harder reasoning/review (`#medium`, `#high`).
+- `openai/gpt-6-luna` — everything else, including fast triage (`#low`) and most implementation (`#medium`).
+
+The DEEP/STANDARD/FAST tiers above still describe task difficulty and the escalation ladder; they no longer map to one model each.
 
 #### Escalation ladder
 
@@ -293,34 +321,40 @@ DEEP → `opus`, STANDARD → `sonnet`, FAST → `haiku`.
 
 ### 5c. Return protocol
 
-Every specialist subagent ends with the same `## Return Protocol` instruction and
-a shared schema, then only the fields its category needs:
+Every specialist subagent ends with the same `## Return Protocol`: return only
+the fields relevant to the parent's next decision, **target ≤300 tokens**, and
+**omit empty fields entirely** (no empty arrays). It forbids emojis, tables,
+restating the task, and invented metrics, and requires `path:line` references.
+
+Example (investigation):
 
 ```
-status: complete|blocked|needs_decision
-summary: []
-evidence: []
-changes: []
-validation: []
-risks: []
-open_decisions: []
-blockers: []
-escalation:
-  agent: null
-  reason: null
+status: complete
+summary:
+  - reconnect loop caused by duplicate retry scheduling
+evidence:
+  - src/ws/client.ts:88-117
+recommendation:
+  - cancel existing retry before scheduling another
+validation:
+  - repro test: passed
 ```
 
-Category additions:
+Example (implementation):
 
-- **Implementation** (`typescript-pro`, `python-pro`, `rust-engineer`, `database-engineer`, `docker-expert`, `websocket-engineer`, `iot-engineer`, `embedded-systems`, `ui-designer`): `files_changed: []`
-- **Investigation** (`researcher`, `debugger`): `findings: []`, `root_cause: null`, `recommendation: []`
-- **Review** (`code-reviewer`, `security-reviewer`, `architect-reviewer`, `performance-engineer`, `ui-ux-tester`, `test-engineer`): `findings:` entries of `{severity, location, issue, evidence, recommendation}`
-- **`api-designer`**: `decision: {recommendation, alternatives, tradeoffs}`
-- **`api-documenter`**: `docs_updated: []`, `docs_missing: []`
+```
+status: complete
+changes:
+  - src/ws/client.ts: cancel stale retry timer
+files_changed:
+  - src/ws/client.ts
+validation:
+  - bun test reconnect: passed
+```
 
-The instruction tells agents to return concise YAML-like output (no emojis, no
-tables, `path:line` references, no invented metrics). Built-in `explore`/`general`
-and the primary agents do not carry this protocol.
+Category fields (`files_changed`, `findings`, `root_cause`, `recommendation`,
+`decision`, `docs_updated`/`docs_missing`) are emitted only when relevant.
+Built-in `explore`/`general` and the primary agents do not carry this protocol.
 
 ## 6. MCP servers
 
@@ -338,13 +372,13 @@ Playwright also needs a browser: `npx playwright install chromium`.
 
 ## 7. Models and escalation
 
-Provider: **OpenCode Go** (OpenCode Console, plan "Personal"). Model IDs use the
-`opencode-go/<model-id>` form. The three agent tiers are defined in
-[§5b](#5b-hierarchy-model-tiers-and-escalation):
-
-- **DEEP:** `glm-5.3`, `kimi-k3`, `qwen3.8-max`
-- **STANDARD:** `minimax-m3`
-- **FAST:** `mimo-v2.6-flash`
+Provider: **OpenAI** (key stored via `opencode auth`). Model IDs use the
+`openai/<model-id>` form, with an optional `#variant` selecting reasoning effort.
+The per-agent assignment is in [§5](#5-agents-21); the two families are
+`openai/gpt-6.1-sol` (orchestration; `#medium`/`#high`) and `openai/gpt-6-luna`
+(everything else; `#low`/`#medium`). The DEEP/STANDARD/FAST tiers in
+[§5b](#5b-hierarchy-model-tiers-and-escalation) describe task difficulty and
+escalation, not a single model.
 
 There is **no automatic model-escalation plugin**. Escalation is the ladder in
 §5b: start FAST, move to STANDARD when needed, and reach DEEP only for genuinely
@@ -358,11 +392,12 @@ When porting back to Claude Code, reverse these where relevant:
    `permissions` array of `{action, resource, effect}` with a
    `{action:"*", resource:"*", effect:"deny"}` baseline plus explicit allows
    (actions `read`, `glob`, `grep`, `edit`, `shell`, `webfetch`, `websearch`,
-   `subagent`, `skill`). Some agents still carry the legacy v1 `permission`
-   object, which V2 also accepts. `model:` aliases (`inherit`/`sonnet`/`haiku`) →
-   `opencode-go/*` IDs. Added `mode:`. All custom agents allow `skill` so they
-   can load a matching skill on demand; the built-in `explore` is granted
-   `skill` too via a config override.
+   `subagent`, `skill`). All agents use the v2 `permissions` array; the legacy v1
+   `permission` object must be avoided because V2 silently drops the agent's
+   `model` when it is present. `model:` aliases (`inherit`/`sonnet`/`haiku`) →
+   `openai/<model>#<variant>` IDs (originally `opencode-go/*`). Added `mode:`.
+   All custom agents allow `skill` so they can load a matching skill on demand;
+   the built-in `explore` is granted `skill` too via a config override.
 2. **Invocation:** Claude-only `disable-model-invocation` / `argument-hint`
    removed; manual-only workflows gated with "Use ONLY when..." descriptions.
 3. **Reference scrubbing:** `Claude Code`→`OpenCode`,

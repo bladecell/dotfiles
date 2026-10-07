@@ -18,6 +18,9 @@ alias ls='eza --icons auto'
 alias grep='grep --color=auto'
 alias patch-vivaldi='~/.config/vivaldi_mods/auto-mod-install.sh'
 alias dotfiles='git --git-dir=$HOME/.config/dotfiles/ --work-tree=$HOME/.config'
+alias oc='opencode'
+alias zb='zen-browser'
+alias cc='claude'
 # History settings
 set -x HISTSIZE 500
 
@@ -199,4 +202,4 @@ function y
     end
     command rm -f -- "$tmp"
 end
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+/home/linuxbrew/.linuxbrew/bin/brew shellenv fish | source

@@ -4,13 +4,17 @@
   "plugins": [],
   "agents": {
     "explore": {
-      "model": "opencode-go/mimo-v2.6-flash",
+      "model": "openai/gpt-6-luna#low",
       "permissions": [
-        { "action": "skill", "resource": "*", "effect": "allow" }
+        { "action": "skill", "resource": "*", "effect": "allow" },
+        { "action": "external_directory", "resource": "~/.config/opencode/skills/**", "effect": "allow" }
       ]
     },
     "general": {
-      "model": "opencode-go/minimax-m3"
+      "model": "openai/gpt-6-sol",
+      "permissions": [
+        { "action": "external_directory", "resource": "~/.config/opencode/skills/**", "effect": "allow" }
+      ]
     }
   },
   "mcp": {
